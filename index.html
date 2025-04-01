@@ -6,13 +6,159 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('https://img.freepik.com/free-vector/black-background-with-focus-spot-light_1017-27230.jpg?t=st=1741797509~exp=1741801109~hmac=7e994e6646c530962e43f038d2952e7004df22d5663e07120ace131d8b877420&w=1060');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+
+    .center {
+      top: 60%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+    }
+
+    .welcome {
+      font-size: 100px;
+      color: white;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .listYears {
+      font-size: 50px;
+      color: white;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    .regular {
+      font-size: 40px;
+      color: transparent;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .bottom-right {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 150px;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 150px;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      width: 150px;
+    }
+
+    .bottom-left {
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      width: 150px;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Centering the answer box */
+    .answerBox {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      text-align: center;
+    }
+  </style>
 </head>
 
-<body background="https://globalnews.ca/news/4121870/carey-price-passes-jacques-plante-for-most-games-played-by-a-habs-goalie/">
-  <center>
-    <h2>Welcome to HillyBillyBullshit</h2>
-  </center>
-  <script src="script.js"></script>
+<body>
+
+  <h2 class="welcome">Welcome</h2>
+
+  <h3 class="listYears" style="top: 90%; left: 30%;">2018-19</h3>
+  <h3 class="listYears" style="top: 90%; left: 70%;">2014-15</h3>
+  <h3 class="listYears" style="top: 10%; left: 70%;">2012-13</h3>
+  <h3 class="listYears" style="top: 10%; left: 30%;">2020-21</h3>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Montreal_Canadiens.svg" alt="Montreal Canadiens Logo"
+    class="bottom-right">
+  <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Columbus_Blue_Jackets_logo.svg"
+    alt="Columbus Blue Jackets Logo" class="top-right">
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Vegas_Golden_Knights_logo.svg"
+    alt="Vegas Golden Knights Logo" class="top-left">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Tampa_Bay_Lightning_2011.svg"
+    alt="Tampa Bay Lightning Logo" class="bottom-left">
+  <img src="Colorado_Avalanche_logo.svg (1).png" alt="Colorado Avalanche Logo" class="center">
+
+  <h2 class="regular">
+    ... .. ..... .... .. . .. .... .... .. .... ... .... .... ... ... . . ... .. . ..... .. .... .... ... .. .. . .....
+    ... .... .... .. .. .. . ..... .. .... . . ... .. . . ..... .. . . .... .. . .... . ..... . .... ... .... ... ... .
+    ... . ..... . . ..... .... . ..... . . .... .. .. .... ... ... .. ..... .... ..... ... ... . ..... . ..... ... ...
+    .... .... . ..... .... .. ... .. ..... .... .. . .. .... .... .. .... ... .... .... ... ... . . ... .. . ..... ..
+    .... ... ... .... .... .. ... . ..... .... ... .... ..... . .. ... .. .. .... .... .... . .. ... .... ..... ...
+  </h2>
+
+  <div class="answerBox">
+    <input type="text" id="answer" placeholder="Submit Answer Here....">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      let userInput = document.getElementById("answer").value;
+      let correctAnswer = "Vezina"; // Replace with actual answer
+
+      if (userInput.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+        document.getElementById("result").innerHTML = "✅ Correct!";
+      } else {
+        document.getElementById("result").innerHTML = "❌";
+      }
+    }
+  </script>
 
 </body>
 
